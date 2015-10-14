@@ -18,3 +18,5 @@
 ;; Since we swapped super and meta (see preload.el), add back the
 ;; Command-` shortcut so it operates like the rest of OSX
 (define-key global-map "\M-`" 'other-frame)
+
+(scroll-bar-mode -1)
