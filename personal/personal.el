@@ -23,3 +23,6 @@
 
 ;; Allow searching with ag (Silver Searcher)
 (prelude-require-package 'ag)
+
+;; Allow arrow keys without warnings
+(setq prelude-guru nil)
