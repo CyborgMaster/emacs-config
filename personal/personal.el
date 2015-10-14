@@ -20,3 +20,6 @@
 (define-key global-map "\M-`" 'other-frame)
 
 (scroll-bar-mode -1)
+
+;; Allow searching with ag (Silver Searcher)
+(prelude-require-package 'ag)
