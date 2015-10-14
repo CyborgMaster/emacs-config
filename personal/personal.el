@@ -8,8 +8,5 @@
 (setq revive-plus:all-frames t)
 (revive-plus:demo)
 
-;; Turn on helm for awesome auto completion
-(require 'prelude-helm-everywhere)
-
 ;; The Monaco font for OSX is intended to be used without anti aliasing
 (setq mac-allow-anti-aliasing nil)
