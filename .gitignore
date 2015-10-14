@@ -20,3 +20,4 @@ session*
 tramp
 /var/pcache
 last-wconf
+.emacs.desktop*

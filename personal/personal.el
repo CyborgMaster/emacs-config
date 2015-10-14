@@ -1,4 +1,8 @@
-;; Use Revive+ to restore open frames and buffers.
+;; Save and restore open buffers.
+(require 'desktop)
+(desktop-save-mode 1)
+
+;; Use Revive+ to restore open frames.
 ;;
 ;; This is a very small library taken from
 ;; https://github.com/martialboniou/revive-plus.  It's not on MELPA
