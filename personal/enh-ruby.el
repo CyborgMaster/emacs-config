@@ -3,7 +3,7 @@
 
 (require 'prelude-programming)
 
-(prelude-require-packages '(ruby-tools inf-ruby yari))
+(prelude-require-packages '(enh-ruby-mode ruby-tools inf-ruby yari))
 
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
 

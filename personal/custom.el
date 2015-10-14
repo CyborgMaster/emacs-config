@@ -5,6 +5,10 @@
  ;; If there is more than one, they won't work right.
  '(enh-ruby-bounce-deep-indent t)
  '(enh-ruby-deep-indent-paren nil)
+ '(js-indent-level 2)
+ '(ruby-deep-arglist nil)
+ '(ruby-deep-indent-paren nil)
+ '(ruby-deep-indent-paren-style nil)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-markup-indent-offset 2))
