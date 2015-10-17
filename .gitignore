@@ -22,3 +22,4 @@ tramp
 last-wconf
 .emacs.desktop*
 personal/custom.el
+personal/personal.el
