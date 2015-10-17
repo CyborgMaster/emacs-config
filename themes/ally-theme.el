@@ -1,8 +1,8 @@
-(deftheme nova
+(deftheme ally
   "Created by Ralph Mickelson (AllyDVM) 2014-05-29.")
 
 (custom-theme-set-faces
- 'nova
+ 'ally
  '(default ((t (:foreground "#eeeeee" :background "#101418" :inherit nil))))
  '(cursor ((t (:foreground "black" :background "#ffffff")))) '(cursor ((t (:foreground "black" :background "#ffffff"))))
  '(fixed-pitch ((t (:family "fixed"))))
@@ -47,4 +47,4 @@
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch))))))
 
-(provide-theme 'nova)
+(provide-theme 'ally)

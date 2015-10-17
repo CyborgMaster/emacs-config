@@ -4,4 +4,4 @@
 
 ;; Load our custom theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(setq prelude-theme 'nova)
+(setq prelude-theme 'ally)
