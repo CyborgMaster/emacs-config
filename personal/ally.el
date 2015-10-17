@@ -24,7 +24,7 @@
 ;; Allow arrow keys without warnings
 (setq prelude-guru nil)
 
-;; If no selection, selection current line 1st...
+;; Smarter comment command
 (defun comment-eclipse ()
   (interactive)
   (let ((start (line-beginning-position))
@@ -41,9 +41,11 @@
     (comment-or-uncomment-region start end)))
 (global-set-key "\M-;" 'comment-eclipse)
 
+;; Fix smooth scrolling on OSX
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 2) ((control) . 5)))
 (setq mouse-wheel-progressive-speed 'nil)
 
+;; Set indent sizes for all our languages to 2 spaces
 (setq enh-ruby-bounce-deep-indent t)
 (setq enh-ruby-deep-indent-paren nil)
 (setq js-indent-level 2)
@@ -54,13 +56,16 @@
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
 
-(set-face-attribute 'default nil :weight 'normal :height 100 :width 'normal :foundry "apple" :family "Monaco")
+;; Default to Monaco font (can be overridden using customize-face 'default')
+(set-face-attribute 'default nil :weight 'normal :height 100 :width 'normal
+                    :foundry "apple" :family "Monaco")
 (setq mac-allow-anti-aliasing nil)
 
+;; A few custom keyboard shortcuts
 (global-set-key [(super down)]  (lambda () (interactive) (scroll-up 1)))
 (global-set-key [(super up)]    (lambda () (interactive) (scroll-down 1)))
 (global-set-key [M-return]      (lambda () (interactive)
                                   (set-buffer-modified-p t) (save-buffer 0)))
 
-;; Put this in your personal.el for CUA-plus settings
+;; Put this in your personal.el to enable CUA-plus
 ;; (load (expand-file-name "optional/cua-plus.el" prelude-personal-dir))
