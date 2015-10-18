@@ -25,10 +25,12 @@
 (setq prelude-guru nil)
 
 ;; Smarter comment command
-(defun comment-eclipse ()
+(defun comment-eclipse (&optional arg)
   (interactive)
   (let ((start (line-beginning-position))
         (end (line-end-position)))
+    (if (and (not (region-active-p)) (looking-at "[ \t]*$"))
+      (comment-dwim arg)
     (when (region-active-p)
       (setq start (save-excursion
                     (goto-char (region-beginning))
@@ -38,7 +40,7 @@
                   (goto-char (region-end))
                   (end-of-line)
                   (point))))
-    (comment-or-uncomment-region start end)))
+    (comment-or-uncomment-region start end))))
 (global-set-key "\M-;" 'comment-eclipse)
 
 ;; Fix smooth scrolling on OSX
