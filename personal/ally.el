@@ -1,3 +1,6 @@
+;; Start the emacs server so clients can connect to it through the terminal
+(server-start)
+
 ;; Save and restore open buffers.
 (require 'desktop)
 (desktop-save-mode 1)
@@ -70,5 +73,18 @@
 (global-set-key [M-return]      (lambda () (interactive)
                                   (set-buffer-modified-p t) (save-buffer 0)))
 
-;; Put this in your personal.el to enable CUA-plus
+;; To customize your Emacs config, create a personal.el file in this
+;; directory (personal/personal.el).  Anything you add to it will be
+;; automatically executed on Emacs start.
+;;
+;; Here are a few things that people commonly add:
+
+;; Enable CUA-plus mode (Ralph's tweaked compatibility library)
 ;; (load (expand-file-name "optional/cua-plus.el" prelude-personal-dir))
+
+;; Change the font (also turns on anti-aliasing)
+;; (setq mac-allow-anti-aliasing 1)
+;; (set-face-attribute 'default nil :weight 'normal :height 150 :width 'normal :foundry "apple" :family "andale mono")
+
+;; Turn on line number globally
+;; (global-linum-mode)
