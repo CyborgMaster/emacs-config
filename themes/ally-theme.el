@@ -29,6 +29,8 @@
  '(font-lock-type-face ((t (:foreground "CadetBlue1"))))
  '(font-lock-variable-name-face ((t (:foreground "SeaGreen2"))))
  '(font-lock-warning-face ((t (:foreground "yellow"))))
+ '(linum ((t (:background "#101418" :foreground "#606060" :height 0.85))))
+ '(vertical-border ((t (:foreground "#101418"))))
  '(button ((t (:inherit (link)))))
  '(link ((((class color) (min-colors 88) (background light)) (:underline (:color foreground-color :style line) :foreground "RoyalBlue3")) (((class color) (background light)) (:underline (:color foreground-color :style line) :foreground "blue")) (((class color) (min-colors 88) (background dark)) (:underline (:color foreground-color :style line) :foreground "cyan1")) (((class color) (background dark)) (:underline (:color foreground-color :style line) :foreground "cyan")) (t (:inherit (underline)))))
  '(link-visited ((default (:inherit (link))) (((class color) (background light)) (:foreground "magenta4")) (((class color) (background dark)) (:foreground "violet"))))

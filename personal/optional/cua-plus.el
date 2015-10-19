@@ -4,3 +4,13 @@
 (global-set-key [end]  'move-end-of-line)
 (global-set-key [C-home] 'beginning-of-buffer)
 (global-set-key [C-end]  'end-of-buffer)
+
+;; (windmove-default-keybindings 'super)
+(global-unset-key [S-up])
+(global-unset-key [S-down])
+(global-unset-key [S-left])
+(global-unset-key [S-right])
+(global-set-key [s-up] 'windmove-up)
+(global-set-key [s-down] 'windmove-down)
+(global-set-key [s-left] 'windmove-left)
+(global-set-key [s-right] 'windmove-right)
