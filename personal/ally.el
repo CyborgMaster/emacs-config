@@ -64,8 +64,9 @@
 (setq mac-allow-anti-aliasing nil)
 
 ;; A few custom keyboard shortcuts
-(global-set-key [(super down)]  (lambda () (interactive) (scroll-up 1)))
-(global-set-key [(super up)]    (lambda () (interactive) (scroll-down 1)))
+(global-set-key [M-s-down]  (lambda () (interactive) (scroll-up 1)))
+(global-set-key [M-s-up]    (lambda () (interactive) (scroll-down 1)))
+(global-set-key (kbd "C-s-l") 'global-linum-mode)
 (global-set-key [M-return]      (lambda () (interactive)
                                   (set-buffer-modified-p t) (save-buffer 0)))
 
