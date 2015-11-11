@@ -72,6 +72,7 @@
 (global-set-key (kbd "C-s-l") 'global-linum-mode)
 (global-set-key [M-return]      (lambda () (interactive)
                                   (set-buffer-modified-p t) (save-buffer 0)))
+(global-set-key [C-return] 'View-back-to-mark)
 
 ;; To customize your Emacs config, create a personal.el file in this
 ;; directory (personal/personal.el).  Anything you add to it will be
