@@ -66,6 +66,11 @@
                     :foundry "apple" :family "Monaco")
 (setq mac-allow-anti-aliasing nil)
 
+;; Turn of smartparens mode.  It looks like it could be very powerful if you got
+;; to know it, but it really raises the learning curve.  Feel free to turn it
+;; back on in your config if you are feeling ambitious.
+(add-hook 'prelude-prog-mode-hook (lambda () (smartparens-mode -1)) t)
+
 ;; A few custom keyboard shortcuts
 (global-set-key [M-s-down]  (lambda () (interactive) (scroll-up 1)))
 (global-set-key [M-s-up]    (lambda () (interactive) (scroll-down 1)))
