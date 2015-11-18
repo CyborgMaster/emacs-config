@@ -27,6 +27,9 @@
 (add-to-list 'auto-mode-alist '("Berksfile\\'" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Appraisals\\'" . enh-ruby-mode))
 
+(add-to-list 'auto-mode-alist '("\\.prawn\\'" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("\\Bowerfile\\'" . enh-ruby-mode))
+
 ;; We never want to edit Rubinius bytecode
 (add-to-list 'completion-ignored-extensions ".rbc")
 
