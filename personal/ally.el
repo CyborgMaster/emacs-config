@@ -51,15 +51,28 @@
 (setq mouse-wheel-progressive-speed 'nil)
 
 ;; Set indent sizes for all our languages to 2 spaces
+(setq standard-indent 2)
+(setq tab-width 2)
 (setq enh-ruby-bounce-deep-indent t)
 (setq enh-ruby-deep-indent-paren nil)
 (setq js-indent-level 2)
+(setq js2-basic-offset 2)
 (setq ruby-deep-arglist nil)
 (setq ruby-deep-indent-paren nil)
 (setq ruby-deep-indent-paren-style nil)
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
+(setq c-basic-offset 2)
+(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2)))
+
+(setq fill-column 80) ;; Out standard wrapping column is column 80
+
+;; Turn off auto save, gets really annoying with guard auto testing
+(setq prelude-auto-save nil)
+
+;; Set the default coffeelint configuration file to what we use in our projects
+(setq flycheck-coffeelintrc "coffeelint.json")
 
 ;; Default to Monaco font (can be overridden using customize-face 'default')
 (set-face-attribute 'default nil :weight 'normal :height 100 :width 'normal
