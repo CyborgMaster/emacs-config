@@ -64,7 +64,10 @@
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-markup-indent-offset 2)
 (setq c-basic-offset 2)
-(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2)))
+(add-hook 'prelude-c-mode-common-hook (lambda () (setq c-basic-offset 2)) t)
+
+;; Open up .h files in c++ mode
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 (setq fill-column 80) ;; Out standard wrapping column is column 80
 
