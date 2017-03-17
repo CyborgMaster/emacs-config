@@ -46,6 +46,16 @@
     (comment-or-uncomment-region start end))))
 (global-set-key "\M-;" 'comment-eclipse)
 
+;; Add a command to revert all open buffers
+(defun revert-all-buffers ()
+  "Refreshes all open buffers from their respective files."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (file-exists-p (buffer-file-name)) (not (buffer-modified-p)))
+        (revert-buffer t t t) )))
+  (message "Refreshed open files.") )
+
 ;; Fix smooth scrolling on OSX
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 2) ((control) . 5)))
 (setq mouse-wheel-progressive-speed 'nil)
@@ -65,6 +75,7 @@
 (setq web-mode-markup-indent-offset 2)
 (setq c-basic-offset 2)
 (add-hook 'prelude-c-mode-common-hook (lambda () (setq c-basic-offset 2)) t)
+(add-hook 'prelude-c-mode-common-hook (c-set-offset 'arglist-intro '+))
 
 ;; Open up .h files in c++ mode
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
