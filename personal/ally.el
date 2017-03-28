@@ -76,6 +76,7 @@
 (setq c-basic-offset 2)
 (add-hook 'prelude-c-mode-common-hook (lambda () (setq c-basic-offset 2)) t)
 (add-hook 'prelude-c-mode-common-hook (c-set-offset 'arglist-intro '+))
+(add-hook 'prelude-c-mode-common-hook (c-set-offset 'arglist-cont-nonempty '+))
 
 ;; Open up .h files in c++ mode
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
