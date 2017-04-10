@@ -81,6 +81,11 @@
 ;; Open up .h files in c++ mode
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+;; scss-mode seems to have broken syntax highlighting right now (See:
+;; https://github.com/antonj/scss-mode/issues/36).  Normal css-mode handles 90%
+;; of what we need.
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+
 (setq fill-column 80) ;; Out standard wrapping column is column 80
 
 ;; Turn off auto save, gets really annoying with guard auto testing
