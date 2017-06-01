@@ -104,6 +104,20 @@
 ;; back on in your config if you are feeling ambitious.
 (add-hook 'prelude-prog-mode-hook (lambda () (smartparens-mode -1)) t)
 
+;; Javascript has a TON of different indentation patterns (the author of
+;; js2-mode talks about it here:
+;; http://steve-yegge.blogspot.co.nz/2008_03_01_archive.html), so js2-mode has
+;; an option to bounce between different likely spots every time you push tab,
+;; so we turn that on.  However, the default behavior for electric indent is to
+;; reindent the previous line every time you hit `enter`, which causes js2-mode
+;; to go back to it's "most-likely" guess even if you pushed tab a couple times
+;; to customize it, so we have to turn off the "indent previous line" behavior
+;; of electric indent.
+(setq js2-bounce-indent-p t)
+(add-hook 'js2-mode-hook (lambda () (setq electric-indent-inhibit t)) t)
+;; ES6 allows trailing commas and it makes arrays and objects much more readable
+(setq js2-strict-trailing-comma-warning nil)
+
 ;; A few custom keyboard shortcuts
 (global-set-key [M-s-down]  (lambda () (interactive) (scroll-up 1)))
 (global-set-key [M-s-up]    (lambda () (interactive) (scroll-down 1)))
