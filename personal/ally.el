@@ -113,7 +113,10 @@
 ;; to go back to it's "most-likely" guess even if you pushed tab a couple times
 ;; to customize it, so we have to turn off the "indent previous line" behavior
 ;; of electric indent.
-(setq js2-bounce-indent-p t)
+;;
+;; We turn on the bounce indent feature described above by setting the
+;; `js2-bounce-indent` variable, but since `js2-mode` reads that variable at
+;; load time we have to set it in `preload.el`
 (add-hook 'js2-mode-hook (lambda () (setq electric-indent-inhibit t)) t)
 ;; ES6 allows trailing commas and it makes arrays and objects much more readable
 (setq js2-strict-trailing-comma-warning nil)
