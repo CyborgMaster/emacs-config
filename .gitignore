@@ -23,3 +23,9 @@ last-wconf
 .emacs.desktop*
 personal/custom.el
 personal/personal*
+.emacs.desktop
+.emacs.desktop.lock
+network-security.data
+prelude-cheatsheet.el
+prelude-cheatsheet.aux
+prelude-cheatsheet.log
