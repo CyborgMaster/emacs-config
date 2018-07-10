@@ -10,7 +10,12 @@
 ;; This is a very small library taken from
 ;; https://github.com/martialboniou/revive-plus.  It's not on MELPA
 ;; and so is installed inside of /vendor
-(prelude-require-package 'revive)
+;;
+;; It also requires the revive package that used to be on MELPA but was removed
+;; due to licensing issues (See:
+;; https://www.reddit.com/r/emacs/comments/6yuuwa/why_is_the_revive_package_emacsmirror_revive_no/dmqag7n/).
+;; It is now vendored and came from
+;; http://www.gentei.org/~yuuji/software/revive.el.
 (require 'revive+)
 (setq revive-plus:all-frames t)
 (revive-plus:demo)
