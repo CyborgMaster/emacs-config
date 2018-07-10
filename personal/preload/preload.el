@@ -5,3 +5,7 @@
 ;; Load our custom theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (setq prelude-theme 'ally)
+
+;; This option has to be set before `js2-mode` loads.  (See explanation of why
+;; we set it in `ally.el`)
+(setq js2-bounce-indent-p t)
