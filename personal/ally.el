@@ -87,6 +87,8 @@
 ;; Default to Monaco font (can be overridden using customize-face 'default')
 (set-face-attribute 'default nil :weight 'normal :height 100 :width 'normal
                     :foundry "apple" :family "Monaco")
+(set-face-attribute 'fixed-pitch nil :weight 'normal :height 100 :width 'normal
+                    :foundry "apple" :family "Monaco")
 (setq mac-allow-anti-aliasing nil)
 
 ;; Turn of smartparens mode.  It looks like it could be very powerful if you got

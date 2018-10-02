@@ -33,3 +33,8 @@
 (setq mmm-submode-decoration-level 1)
 (setq mmm-parse-when-idle t)
 (global-set-key "\M-p"  'mmm-parse-buffer)
+
+(add-hook 'mmm-ruby-mode-submode-hook
+          (lambda ()
+            (whitespace-mode 0)
+            (hl-todo-mode)))
