@@ -38,3 +38,6 @@
           (lambda ()
             (whitespace-mode 0)
             (hl-todo-mode)))
+(add-hook 'mmm-js-mode-submode-hook
+          (lambda ()
+            (whitespace-mode 0)))
