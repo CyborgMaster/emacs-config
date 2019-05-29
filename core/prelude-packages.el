@@ -80,7 +80,7 @@
     operate-on-number
     smartparens
     smartrep
-    undo-tree
+    ;; undo-tree
     volatile-highlights
     which-key
     zenburn-theme
