@@ -136,3 +136,5 @@
 
 ;; Turn on line number globally
 ;; (global-linum-mode)
+
+(add-hook 'prelude-prog-mode-hook (lambda () (abbrev-mode -1)))
