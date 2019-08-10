@@ -1,3 +1,7 @@
+;; Get around an https bug in Emacs 26.2 (see: https://www.reddit.com/r/emacs/
+;; comments/cdei4p/failed_to_download_gnu_archive_bad_request/)
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ;; Start the emacs server so clients can connect to it through the terminal
 (server-start)
 
