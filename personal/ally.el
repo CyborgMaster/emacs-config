@@ -56,7 +56,9 @@
 
 ;; Set indent sizes for all our languages to 2 spaces
 (setq standard-indent 2)
+(setq-default tab-width 2)
 (setq tab-width 2)
+
 (setq enh-ruby-bounce-deep-indent t)
 (setq enh-ruby-deep-indent-paren nil)
 (setq js-indent-level 2)
