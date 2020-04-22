@@ -119,13 +119,32 @@
 ;; ES6 allows trailing commas and it makes arrays and objects much more readable
 (setq js2-strict-trailing-comma-warning nil)
 
+;; RET is not a physical (keyboard) key. It is a logical key -- the Emacs
+;; way of writing what your physical Return or Enter key typically sends to
+;; Emacs: a Control-M character (which Emacs also writes as C-m, when describing
+;; the Ctrl + m key sequence). And if your physical Return or Enter key sends
+;; something else, then Emacs writes that as the pseudo-function key
+;; <return>.
+;;
+;; Emacs automatically maps <return> to RET, unless <return> is itself bound to
+;; a different command than RET. (Note that the ASCII control character
+;; Control-M is also called a carriage return character, and C-m is essentially
+;; another way of writing RET.)
+;; (From: https://emacs.stackexchange.com/a/14944)
+;;
+;; It also seems the Emacs automatically translates M-return to M-RET, but not
+;; C-return to C-RET, so we are adding that translation. See
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Translation-Keymaps.html
+;; for info on how key translation works.
+(define-key local-function-key-map [C-return] (kbd "C-RET"))
+
 ;; A few custom keyboard shortcuts
 (global-set-key [M-s-down]  (lambda () (interactive) (scroll-up 1)))
 (global-set-key [M-s-up]    (lambda () (interactive) (scroll-down 1)))
 (global-set-key (kbd "C-s-l") 'global-linum-mode)
-(global-set-key [M-return]      (lambda () (interactive)
+(global-set-key (kbd "M-RET") (lambda () (interactive)
                                   (set-buffer-modified-p t) (save-buffer 0)))
-(global-set-key [C-return] 'pop-to-mark-command)
+(global-set-key (kbd "C-RET") 'pop-to-mark-command)
 
 ;; To customize your Emacs config, create a personal.el file in this
 ;; directory (personal/personal.el).  Anything you add to it will be
