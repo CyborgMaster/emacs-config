@@ -86,6 +86,7 @@
 
 ;; Turn off auto save, gets really annoying with guard auto testing
 (setq prelude-auto-save nil)
+(super-save-mode 0)
 
 ;; Set the default coffeelint configuration file to what we use in our projects
 (setq flycheck-coffeelintrc "coffeelint.json")
