@@ -27,6 +27,15 @@
 (add-to-list 'desktop-minor-mode-handlers
              '(whitespace-mode . (lambda (vars))))
 
+;; Use package is an easier way of installing and configuring packages
+(prelude-require-package 'use-package)
+
+;; Quelpa allows installing packages directly from github
+(use-package quelpa-use-package
+  :ensure t
+  :init
+  (setq quelpa-checkout-melpa-p nil))
+
 ;; Since we swapped super and meta (see preload.el), add back the
 ;; Command-` shortcut so it operates like the rest of OSX
 (define-key global-map "\M-`" 'other-frame)
