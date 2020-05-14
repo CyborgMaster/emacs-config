@@ -8,6 +8,24 @@
 ;; Save and restore open buffers.
 (require 'desktop)
 (desktop-save-mode 1)
+;; For those modes that change which whitespace types are shown (for example
+;; go-mode hides tabs) there is a problem when restoring the desktop file.
+;; Because whitespace mode, when enabled, restores its display type options to
+;; the global default, restoring the whitespace minor mode overwrites any
+;; language mode customizations.  The execution path would be:
+;;
+;; 1. Load the major mode.  It's post load hooks would turn on whitespace mode
+;; and adjust it's options.
+;;
+;; 2. Load the whitespace minor mode.  This again turns on whitespace mode and
+;; resets it's options to the global defaults, which shows tabs.
+;;
+;; The better option would be to have desktop saving not restore the whitespace
+;; minor mode and just let the major mode hooks setup the language specific
+;; settings.  The below does that.  It sets up a special handler that is
+;; responsible for restoring the minor mode, but in this case it does nothing.
+(add-to-list 'desktop-minor-mode-handlers
+             '(whitespace-mode . (lambda (vars))))
 
 ;; Since we swapped super and meta (see preload.el), add back the
 ;; Command-` shortcut so it operates like the rest of OSX

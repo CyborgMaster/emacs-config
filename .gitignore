@@ -25,6 +25,7 @@ personal/custom.el
 personal/personal*
 .emacs.desktop
 .emacs.desktop.lock
+.lsp-session*
 network-security.data
 prelude-cheatsheet.el
 prelude-cheatsheet.aux
