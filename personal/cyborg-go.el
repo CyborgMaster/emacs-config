@@ -41,26 +41,37 @@
 ;; https://github.com/nlamirault/gotest.el/pull/70.  I forked it to rebase his
 ;; PR on master.
 (use-package gotest
-  :quelpa (gotest :fetcher github
-                   :repo "CyborgMaster/gotest.el"
-                   :branch "testify-rebased"))
+  :quelpa (gotest
+           :fetcher github
+           :repo "CyborgMaster/gotest.el"
+           :branch "testify-rebased"))
 
 ;; Optional - provides fancier overlays.
 (use-package lsp-ui
   :ensure t
-  :commands lsp-ui-mode)
+  :commands lsp-ui-mode
+  :config
+  ;; The pop up docs are currently slowing down movement. So we disable it for
+  ;; now, but decrease the delay when we invoke it manually.
+  (setq lsp-ui-doc-enable nil)
+  (setq lsp-ui-doc-delay 0))
+
+(use-package helm-lsp
+  :ensure t
+  :commands helm-lsp-workspace-symbol
+  :init (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 
 ;; Company mode is a standard completion package that works well with lsp-mode.
 (use-package company
-             :ensure t
-             :config
-             ;; Optionally enable completion-as-you-type behavior.
-             (setq company-idle-delay 0.5)
-             (setq company-dabbrev-downcase 0)
-             (setq company-minimum-prefix-length 1))
+  :ensure t
+  :config
+  ;; Optionally enable completion-as-you-type behavior.
+  (setq company-idle-delay 0)
+  (setq company-dabbrev-downcase 0)
+  (setq company-minimum-prefix-length 1))
 
 ;; Optional - provides snippet support.
 (use-package yasnippet
-             :ensure t
-             :commands yas-minor-mode
-             :hook (go-mode . yas-minor-mode))
+  :ensure t
+  :commands yas-minor-mode
+  :hook (go-mode . yas-minor-mode))
