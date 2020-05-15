@@ -50,16 +50,13 @@
   :ensure t
   :commands lsp-ui-mode)
 
-(use-package helm-lsp
-  :ensure t
-  :commands helm-lsp-workspace-symbol)
-
 ;; Company mode is a standard completion package that works well with lsp-mode.
 (use-package company
              :ensure t
              :config
              ;; Optionally enable completion-as-you-type behavior.
-             (setq company-idle-delay 0)
+             (setq company-idle-delay 0.5)
+             (setq company-dabbrev-downcase 0)
              (setq company-minimum-prefix-length 1))
 
 ;; Optional - provides snippet support.
