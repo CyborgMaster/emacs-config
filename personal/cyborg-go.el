@@ -50,11 +50,18 @@
 (use-package lsp-ui
   :ensure t
   :commands lsp-ui-mode
-  :config
+  :init
   ;; The pop up docs are currently slowing down movement. So we disable it for
   ;; now, but decrease the delay when we invoke it manually.
   (setq lsp-ui-doc-enable nil)
-  (setq lsp-ui-doc-delay 0))
+  (setq lsp-ui-doc-delay 0)
+  :config
+  ;; lsp-ui remaps find-definitions to lsp-ui-peek-find-definitions, which pops
+  ;; up in the current window.  It pops up two things side by side, which with
+  ;; my narrower windows, don't have enough width to read.  I revert to using
+  ;; the default which jumps to the file.
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] nil)
+)
 
 (use-package helm-lsp
   :ensure t
