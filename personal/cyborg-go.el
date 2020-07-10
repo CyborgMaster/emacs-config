@@ -11,8 +11,10 @@
 (use-package lsp-mode
              :ensure t
              :commands (lsp lsp-deferred)
-             :hook ((go-mode . lsp-deferred)
-                    (lsp-mode . lsp-enable-which-key-integration)))
+             :hook (
+                    (go-mode . lsp-deferred)
+                    ;; (lsp-mode . lsp-enable-which-key-integration)
+                    ))
 
 ;; Set up before-save hooks to format buffer and add/delete imports.
 ;; Make sure you don't have other gofmt/goimports hooks enabled.
@@ -73,12 +75,19 @@
   :ensure t
   :config
   ;; Optionally enable completion-as-you-type behavior.
-  (setq company-idle-delay 0)
+  (setq company-idle-delay 0.25)
   (setq company-dabbrev-downcase 0)
   (setq company-minimum-prefix-length 1))
 
-;; Optional - provides snippet support.
+;; Provides snippet support.
 (use-package yasnippet
   :ensure t
   :commands yas-minor-mode
   :hook (go-mode . yas-minor-mode))
+
+;; Auto gen stubs for missing functions
+(use-package go-impl
+  :quelpa (go-impl
+           :fetcher github
+           :repo "krizex/emacs-go-impl"
+           :branch "godoc"))
