@@ -11,6 +11,9 @@
 (use-package lsp-mode
              :ensure t
              :commands (lsp lsp-deferred)
+             :config
+             ;; Use projectile to detect the project root
+             (setq lsp-auto-guess-root t)
              :hook (
                     (go-mode . lsp-deferred)
                     ;; (lsp-mode . lsp-enable-which-key-integration)
