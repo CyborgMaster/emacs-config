@@ -16,7 +16,7 @@
              (setq lsp-auto-guess-root t)
              :hook (
                     (go-mode . lsp-deferred)
-                    ;; (lsp-mode . lsp-enable-which-key-integration)
+                    (lsp-mode . lsp-enable-which-key-integration)
                     ))
 
 ;; Set up before-save hooks to format buffer and add/delete imports.
