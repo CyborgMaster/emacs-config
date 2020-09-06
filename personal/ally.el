@@ -191,3 +191,11 @@
 ;; (global-linum-mode)
 
 (add-hook 'prelude-prog-mode-hook (lambda () (abbrev-mode -1)))
+
+;; This fixes an issue with `projectile-find-file` crashing when inside a git
+;; repository with sub modules and within that git repository having one
+;; specific sub directory marked as a project with a `.projectile` file'.
+;;
+;; Idea found here:
+;; https://github.com/bbatsov/projectile/issues/1323#issuecomment-432402427
+(setq projectile-git-submodule-command "git submodule --quiet foreach 'echo $(git rev-parse --show-toplevel)' | xargs realpath --relative-to=$PWD")
