@@ -161,10 +161,12 @@
 ;; (From: https://emacs.stackexchange.com/a/14944)
 ;;
 ;; It also seems the Emacs automatically translates M-return to M-RET, but not
-;; C-return to C-RET, so we are adding that translation. See
+;; C-return to C-RET or s-return to c-RET, so we are adding those
+;; translations. See
 ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Translation-Keymaps.html
 ;; for info on how key translation works.
 (define-key local-function-key-map [C-return] (kbd "C-RET"))
+(define-key local-function-key-map [s-return] (kbd "s-RET"))
 
 ;; A few custom keyboard shortcuts
 (global-set-key [M-s-down]  (lambda () (interactive) (scroll-up 1)))
