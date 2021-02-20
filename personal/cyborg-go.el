@@ -49,7 +49,8 @@
   :quelpa (gotest
            :fetcher github
            :repo "CyborgMaster/gotest.el"
-           :branch "testify-rebased"))
+           :branch "testify-rebased")
+  :config (setq-default go-test-args "-race"))
 
 ;; Optional - provides fancier overlays.
 (use-package lsp-ui
