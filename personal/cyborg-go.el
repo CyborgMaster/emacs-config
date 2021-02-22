@@ -42,20 +42,8 @@
   (subword-mode +1))
 (add-hook 'go-mode-hook 'my-go-customize-hook)
 
-;; The normal gotest package has a bug with testify.  PR here:
-;; https://github.com/nlamirault/gotest.el/pull/70.  I forked it to rebase his
-;; PR on master.
-;;
-;; 2020-02-21: There was another bug with the "-race" flag being put in the
-;; wrong order, causing it to be ignored.  I opened a PR to fix it here:
-;; https://github.com/nlamirault/gotest.el/pull/80.
-;;
-;; I merged the two pending fixes into a combined fixes branch for use here.
 (use-package gotest
-  :quelpa (gotest
-           :fetcher github
-           :repo "CyborgMaster/gotest.el"
-           :branch "combined-fixes")
+  :ensure t
   :config (setq-default go-test-args "-race"))
 
 ;; Optional - provides fancier overlays.
