@@ -44,7 +44,7 @@
 
 (use-package gotest
   :ensure t
-  :config (setq-default go-test-args "-race"))
+  :config (setq-default go-test-args "-race -v"))
 
 ;; Optional - provides fancier overlays.
 (use-package lsp-ui
@@ -69,13 +69,13 @@
   :init (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 
 ;; Company mode is a standard completion package that works well with lsp-mode.
-(use-package company
-  :ensure t
-  :config
-  ;; Optionally enable completion-as-you-type behavior.
-  (setq company-idle-delay 0.5)
-  (setq company-dabbrev-downcase 0)
-  (setq company-minimum-prefix-length 1))
+;; (use-package company
+;;   :ensure t
+;;   :config
+;;   ;; Optionally enable completion-as-you-type behavior.
+;;   (setq company-idle-delay 0.5)
+;;   (setq company-dabbrev-downcase 0)
+;;   (setq company-minimum-prefix-length 1))
 
 ;; Provides snippet support.
 (use-package yasnippet
