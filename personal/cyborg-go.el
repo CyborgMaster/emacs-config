@@ -44,7 +44,7 @@
 
 (use-package gotest
   :ensure t
-  :config (setq-default go-test-args "-race -v"))
+  :config (setq-default go-test-args "-race"))
 
 ;; Optional - provides fancier overlays.
 (use-package lsp-ui
