@@ -201,3 +201,6 @@
 ;; Idea found here:
 ;; https://github.com/bbatsov/projectile/issues/1323#issuecomment-432402427
 (setq projectile-git-submodule-command "git submodule --quiet foreach 'echo $(git rev-parse --show-toplevel)' | xargs realpath --relative-to=$PWD")
+
+(add-to-list 'auto-mode-alist '("\\.org\\.txt\\'" . org-mode))
+(add-hook 'org-mode-hook 'org-indent-mode)
