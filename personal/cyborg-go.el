@@ -8,6 +8,13 @@
 ;; https://github.com/golang/tools/blob/master/gopls/doc/emacs.md. With pieces
 ;; taken from /modules/prelude-go.el
 
+(prelude-require-packages '(go-mode
+                            go-projectile
+                            lsp-mode
+                            lsp-ui
+                            company
+                            gotest))
+
 (use-package lsp-mode
              :ensure t
              :commands (lsp lsp-deferred)
