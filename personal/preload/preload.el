@@ -1,3 +1,6 @@
+;; We have to set the shell before `prelude-macos` tries the load the $PATH
+(setq shell-file-name "/bin/zsh")
+
 ;; Use the command key as meta and the option key as super
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
