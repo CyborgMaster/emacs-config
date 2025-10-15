@@ -12,6 +12,9 @@
               ;; ("s-w" . copilot-accept-completion-by-word)
               ;; ("s-l" . copilot-accept-completion-by-line)
         )
+  :init
+  (setq copilot-indent-offset-warning-disable t)
+
   :config
   (defun my/copilot-tab ()
     (interactive)
