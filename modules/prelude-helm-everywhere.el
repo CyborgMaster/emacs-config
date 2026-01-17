@@ -32,7 +32,7 @@
 
 ;;; Code:
 (require 'prelude-helm)
-(prelude-require-packages '(helm-descbinds helm-ag))
+;(prelude-require-packages '(helm-descbinds helm-ag))
 (require 'helm-eshell)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
